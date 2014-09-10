@@ -3,7 +3,7 @@ require 'json'
 
 def generate_grid(grid_size)
   #TODO: generate random grid of letters
-  ('A'..'Z').to_a.shuffle[0...grid_size]
+  ('A'..'Z').to_a.sample(grid_size)
 end
 
 def run_game(attempt, grid, start_time, end_time)
