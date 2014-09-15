@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ads
+
   resources :tags
 
   root to: 'tags#index'
