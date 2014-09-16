@@ -23,9 +23,12 @@ class AdsController < ApplicationController
   def create
     @ad = Ad.new(ad_params)
 
-    if @ad.save
+    begin
+      @ad.save
       redirect_to @ad, notice: 'Ad was successfully created.'
-    else
+    rescue ActiveRecord::StatementInvalid
+      @ad.errors.add :tag_id, "can't be blank"
+
       render :new
     end
   end

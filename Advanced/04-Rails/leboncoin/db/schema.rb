@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915185324) do
+ActiveRecord::Schema.define(version: 20140916151745) do
 
   create_table "ads", force: true do |t|
     t.string   "title"
     t.integer  "price"
-    t.integer  "tag_id"
+    t.integer  "tag_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
